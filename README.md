@@ -25,6 +25,9 @@ As data providers, we understand the importance of providing real-time data feed
 ### What kind of data feeds are offered via this service?
 Currently, NYSE offers Best Quotes and Trades aka BQT feed via this offering. BQT is a cost-efficient, consolidated market data feed that provides a unified view of quotes and trades from NYSE, NYSE American, NYSE Arca, NYSE Chicago, and NYSE National. We plan to add more data feeds in the future.
 
+### Where can I see the client specification documentation for BQT?
+Client specs are available [here.](https://www.nyse.com/publicdocs/nyse/data/NYSE_BQT_Client_Specification.pdf) 
+
 ### What is the message format used for this offering?
 We use protocol buffers as the message format. Our client specification is available here and our proto file is accessible via this link.
 
