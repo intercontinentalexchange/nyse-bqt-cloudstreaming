@@ -1,11 +1,11 @@
 
-# NYSE BQTMessage Consumer Test
+# NYSE BQTMessage Consumer
 
-This README file provides instructions and details for the `NYSE_BQTMessage_Consumer.js` script, which is designed to validate connectivity to the NYSE Kafka topic.
+This README file provides instructions and details for the `NYSE_BQTMessage_Consumer.js` script, which is designed to validate connectivity to the NYSE BQT Kafka offering.
 
 ## Overview
 
-The `NYSE_BQTMessage_Consumer.js` script is to test the NYSE Kafka connectivity. It initializes a Kafka consumer, subscribes to the NYSE BQT Kafka topics, and prints messages.
+The `NYSE_BQTMessage_Consumer.js` script initializes a Kafka consumer, subscribes to the NYSE BQT Kafka topics, and prints messages.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Before running the test script, ensure you have the following prerequisites:
 3. **Protocol Buffers Compiler (protoc)**: Ensure you have the Protocol Buffers compiler installed. 
     The protoc compiler can be downloaded from the Protocol Buffers GitHub releases page. 
 
-Note: Make sure that you follow the steps to configure the necessary connections in your AWS account to establish connectivity to the NYSE BQT Kafka offering.
+Note: We have 2 environments for this offering viz. Load Test and Production. Please see respective cloud onboarding documentation below:
 
 | Environment                    | Documentation Link                                                                        |
 |--------------------------------|-------------------------------------------------------------------------------------------|
@@ -47,7 +47,7 @@ Optional - Below steps are required to generate the BQT_Cloud_Streaming_pb.js fi
     **topic**: The name of the Kafka topic to consume messages.
     **brokers**: Select the appropriate  brokers based on the AWS region and environment
 
-    | Bbrokers                                      | Description                    |
+    | Bbrokers                                               | Description                    |
     |--------------------------------------------------------|--------------------------------|
     | `['broker.lt.use1.bqt.pulse.nyse:9094']`               | Load Test us-east-1 endpoint   |
     | `['broker.prod.use1.bqt.pulse.nyse:9094']`             | Production us-east-1 endpoint  |
@@ -64,6 +64,6 @@ Optional - Below steps are required to generate the BQT_Cloud_Streaming_pb.js fi
 If you encounter any issues, ensure that:
 
 - The topic name is correct.
-- Validate - username, password and groupId are correct.
-- The required libraries are not installed.
+- Validate that username, password and groupId are correct.
+- The required libraries are installed.
 
