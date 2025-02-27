@@ -19,7 +19,7 @@ NYSE Cloud Streaming is a new offering that expands accessibility of our high-qu
 As data providers, we understand the importance of providing real-time data feeds to a wider range of cloud-native customers. Our goal is to equip more customers with market insights that allow them to make smarter decisions; that’s why we chose Redpanda® to stream our data, making it available to you at a faster rate and lower cost than traditional data feeds.
 
 ### What is the architecture behind NYSE Cloud Streaming?
-
+![NYSE Cloud Streaming](https://github.com/ICE-NYSE/bqt-cloudstreaming/blob/main/assets/NYSE-Cloud-Streaming-architecture.png)
 
 ### What kind of data feeds are offered via this service?
 Currently, NYSE offers Best Quotes and Trades aka BQT feed via this offering. BQT is a cost-efficient, consolidated market data feed that provides a unified view of quotes and trades from NYSE, NYSE American, NYSE Arca, NYSE Chicago, and NYSE National. We plan to add more data feeds in the future.
