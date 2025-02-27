@@ -1,8 +1,8 @@
 # NYSE BQTMessage Consumer Test
-This README file provides instructions and details for the NYSE_BQTMessage_Consumer.java script, which is designed to validate connectivity to the NYSE Kafka topic.
+This README file provides instructions and details for the NYSE_BQTMessage_Consumer.java script, which is designed to validate connectivity to the NYSE BQT Kafka offering.
 
 # Overview
-The NYSE_BQTMessage_Consumer.java script is used to test the NYSE Kafka connectivity. It initializes a Kafka consumer, subscribes to the NYSE BQT Kafka topics, and prints messages.
+The NYSE_BQTMessage_Consumer.java script initializes a Kafka consumer, subscribes to the NYSE BQT Kafka topics, and prints messages.
 
 # Prerequisites
 Before running the test script, ensure you have the following prerequisites:
@@ -13,7 +13,7 @@ Before running the test script, ensure you have the following prerequisites:
    Protobuf: Version 3.24.3
    Ensure you have the latest proto file from https://www.nyse.com/publicdocs/nyse/data/BQT_Cloud_Streaming.proto downloaded in proto folder.
 
-Note: Make sure that you follow the steps to configure the necessary connections in your AWS account to establish connectivity to the NYSE BQT Kafka offering.
+Note: We have 2 environments for this offering viz. Load Test and Prod. Please see respective cloud onboarding documentation below:
 
 | Environment                    | Documentation Link                                                                        |
 |--------------------------------|-------------------------------------------------------------------------------------------|
