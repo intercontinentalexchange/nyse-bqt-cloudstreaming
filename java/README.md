@@ -29,9 +29,7 @@ Configure the Script: Open the NYSE_BQTMessage_Consumer.java script and configur
     | Bootstrap Servers                                      | Description                    |
     |--------------------------------------------------------|--------------------------------|
     | `['broker.lt.use1.bqt.pulse.nyse:9094']`               | Load Test us-east-1 endpoint   |
-    | `['broker.lt.ape1.bqt.pulse.nyse:9093']`               | Load Test ap-east-1 endpoint   |
     | `['broker.prod.use1.bqt.pulse.nyse:9094']`             | Production us-east-1 endpoint  |
-    | `['broker.prod.ape1.bqt.pulse.nyse:9093']`             | Production ap-east-1 endpoint  |
 
 3. GROUP_ID_CONFIG: Update GROUP_ID_CONFIG to pull data from Kafka. GROUP_ID_CONFIG should be 
      {name_of_topic_[your_AWS_Account_Nmbr]}. Example: bqt_trd_str_1_1234567890

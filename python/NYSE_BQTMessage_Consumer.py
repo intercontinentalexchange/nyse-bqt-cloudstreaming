@@ -19,10 +19,8 @@ class Consumer(threading.Thread):
         self.topic_name = topic_name        
         self.consumer = KafkaConsumer(
             self.topic_name,
-            bootstrap_servers=['broker.lt.use1.bqt.pulse.nyse:9094'], #LT us-east-1 endpoint 
-            #bootstrap_servers=['broker.lt.ape1.bqt.pulse.nyse:9093'], #LT ap-east-1 endpoint 
+            bootstrap_servers=['broker.lt.use1.bqt.pulse.nyse:9094'], #LT us-east-1 endpoint
             #bootstrap_servers=['broker.prod.use1.bqt.pulse.nyse:9094'], #PRD us-east-1 endpoint
-            #bootstrap_servers=['broker.prod.ape1.bqt.pulse.nyse:9093'], #PRD ap-east-1 endpoint            
             group_id='', # update group_id # {name_of_topic_[your_AWS_Account_Nmbr]} Example: bqt_trd_str_1_1234567890
             security_protocol='SASL_PLAINTEXT',
             sasl_plain_username='', # add username

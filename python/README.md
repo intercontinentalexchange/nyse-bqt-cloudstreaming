@@ -50,9 +50,7 @@ To generate the BQT_Cloud_Streaming_pb2.py file from the BQT_Cloud_Streaming.pro
     | Bootstrap Servers                                      | Description                    |
     |--------------------------------------------------------|--------------------------------|
     | `['broker.lt.use1.bqt.pulse.nyse:9094']`               | Load Test us-east-1 endpoint   |
-    | `['broker.lt.ape1.bqt.pulse.nyse:9093']`               | Load Test ap-east-1 endpoint   |
     | `['broker.prod.use1.bqt.pulse.nyse:9094']`             | Production us-east-1 endpoint  |
-    | `['broker.prod.ape1.bqt.pulse.nyse:9093']`             | Production ap-east-1 endpoint  |
 
     **group_id**: Update group_id to pull data from Kafka. group_id should be {name_of_topic_[your_AWS_Account_Nmbr]} Example: bqt_trd_str_1_1234567890  
     **sasl_plain_username**: Kafka username  
