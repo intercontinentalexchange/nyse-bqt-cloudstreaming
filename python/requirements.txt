@@ -1,0 +1,2 @@
+kafka_python_ng==2.2.3
+protobuf==5.28.3

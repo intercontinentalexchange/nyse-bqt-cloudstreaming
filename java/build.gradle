@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version '0.9.4'
+    id 'application'
+}
+
+mainClassName = 'com.nyse.redpanda.NYSE_BQTMessage_Consumer'
+run {
+    jvmArgs = ['-Djava.security.manager', '-Djava.security.policy=securityManager.policy']
+    classpath = sourceSets.main.runtimeClasspath
+}
+repositories {
+    mavenCentral()
+}
+
+ 
+
+dependencies {
+    implementation 'org.apache.kafka:kafka-clients:3.5.1'
+    implementation 'com.google.protobuf:protobuf-java:3.24.3'
+}
+
+ 
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.24.3'
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {  }
+            }
+        }
+    }
+}
+ 
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}

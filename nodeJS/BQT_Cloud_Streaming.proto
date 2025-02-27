@@ -1,0 +1,184 @@
+syntax = "proto2";
+
+package pulse;
+
+message BQTMessage {
+  required uint32 msg_type = 1;
+
+  oneof payload {
+    Trade trade = 2;
+    TradeCorrection trade_corr = 3;
+    TradeCancelBust trade_cancel = 4;
+    TrfPriorDayTrade prior_trade = 5;
+    TrfPriorDayTradeCancel prior_trade_cancel = 6;
+    Quote quote = 7;
+    SingleSidedQuote single_sided_quote = 8;
+    SymbolMapping symbol_mapping = 9;
+    SecurityStatus security_status = 10;
+    SymbolClear symbol_clear = 11;
+    ConsolidatedVolume cons_vol = 12;
+    StockSummary ssm = 13;
+  }
+}
+
+message StockSummary {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional double hiprice = 4;
+  optional double loprice = 5;
+  optional double listingmktopenprice = 6;
+  optional uint32 grpvol = 7;
+  optional string mktofhiprice = 8;
+  optional string mktofloprice = 9;
+  optional string mktofopenprice = 10;
+  optional uint32 numclsprice = 11;
+  optional string mktofcloseprice = 12;
+  optional double listingmktcloseprice = 13;
+  optional double conshiprice = 14;
+  optional double consloprice = 15;
+  optional double consfirstprice = 16;
+  optional double conslastprice = 17;
+  optional string complete = 18;
+}
+
+message ConsolidatedVolume {
+  optional uint64 feedmsgseq = 1;
+  optional string symbol = 2;
+  optional uint64 consvol = 3;
+  optional string reason = 4;
+  optional string complete = 5;
+}
+
+message Quote {
+  optional uint64 feedmsgseq = 1;
+  optional string symbol = 2;
+  optional double askprice = 3;
+  optional uint32 askvolume = 4;
+  optional double bidprice = 5;
+  optional uint32 bidvolume = 6;
+  optional string askcondition = 7;
+  optional string bidcondition = 8;
+  optional string retailpriceindicator = 9;
+  optional string askmarketid = 10;
+  optional string bidmarketid = 11;
+}
+
+message SingleSidedQuote {
+  optional uint64 feedmsgseq = 1;
+  optional string symbol = 2;
+  optional string side = 3;
+  optional double price = 4;
+  optional uint32 volume = 5;
+  optional string condition = 6;
+  optional string retailpriceindicator = 7;
+  optional string marketid = 8;
+}
+
+message SecurityStatus {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional string securitystatus = 4;
+  optional string haltcond = 5;
+  optional string marketid = 6;
+  optional double price1 = 7;
+  optional double price2 = 8;
+  optional string ssrexch = 9;
+  optional uint32 ssrvol = 10;
+  optional uint32 time = 11;
+  optional string ssrstate = 12;
+  optional string marketstate = 13;
+}
+
+
+message SymbolMapping {
+  optional uint64 feedmsgseq = 1;
+  optional uint32 symbolid = 2;
+  optional string symbol = 3;
+  optional string marketid = 4;
+  optional uint32 systemid = 5;
+  optional string exchcode = 6;
+  optional uint32 pricescale = 7;
+  optional string securitytype = 8;
+  optional uint32 lotsize = 9;
+  optional double precloseprice = 10;
+  optional uint32 preclosevol = 11;
+  optional string priceres = 12;
+  optional string roundlotac = 13;
+  optional double mpv = 14;
+  optional uint32 unitoftrade = 15;
+}
+
+message SymbolClear {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional uint32 nextsourceseq = 4;
+  optional string marketid = 5;
+}
+
+message Trade {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional uint32 tradeid = 4;
+  optional double price = 5;
+  optional uint32 volume = 6;
+  optional string tradecondition1 = 7;
+  optional string tradecondition2 = 8;
+  optional string tradecondition3 = 9;
+  optional string tradecondition4 = 10;
+  optional string marketid = 11;
+  optional uint64 fh_sourcetime=12;
+  optional uint64 fh_sourcetimeNS=13;
+  optional uint64 pps_sourcetime=14;
+  optional uint64 pps_sourcetimeNS=15;
+}
+
+message TradeCorrection {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional uint32 origtradeid = 4;
+  optional uint32 tradeid = 5;
+  optional double price = 6;
+  optional uint32 volume = 7;
+  optional string tradecondition1 = 8;
+  optional string tradecondition2 = 9;
+  optional string tradecondition3 = 10;
+  optional string tradecondition4 = 11;
+  optional string marketid = 12;
+}
+
+message TradeCancelBust {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional uint32 origtradeid = 4;
+  optional string marketid = 5;
+}
+
+message TrfPriorDayTrade {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional uint32 tradeid = 4;
+  optional double price = 5;
+  optional uint32 volume = 6;
+  optional string tradecondition1 = 7;
+  optional string tradecondition2 = 8;
+  optional string tradecondition3 = 9;
+  optional string tradecondition4 = 10;
+  optional uint64 priordaytime = 11;
+}
+
+message TrfPriorDayTradeCancel {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional uint32 tradeid = 4;
+  optional double price = 5;
+  optional uint32 volume = 6;
+  optional uint64 priordaytime = 7;
+}
