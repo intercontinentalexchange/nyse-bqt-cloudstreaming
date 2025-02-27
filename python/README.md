@@ -1,11 +1,11 @@
 
-# NYSE BQTMessage Consumer Test
+# NYSE BQTMessage Consumer
 
-This README file provides instructions and details for the `NYSE_BQTMessage_Consumer.py` script, which is designed to validate connectivity to the NYSE Kafka topic.
+This README file provides instructions and details for the `NYSE_BQTMessage_Consumer.py` script, which is designed to validate connectivity to the NYSE BQT Kafka offering.
 
 ## Overview
 
-The `NYSE_BQTMessage_Consumer.py` script is to test the NYSE Kafka connectivity. It initializes a Kafka consumer, subscribes to the NYSE BQT Kafka topics, and prints messages.
+The `NYSE_BQTMessage_Consumer.py` script initializes a Kafka consumer, subscribes to the NYSE BQT Kafka topics, and prints messages.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Before running the test script, ensure you have the following prerequisites:
 3. **Protocol Buffers Compiler (protoc)**: Ensure you have the Protocol Buffers compiler installed. This code has used Protoc - 29.1 version.
     The protoc compiler can be downloaded from the Protocol Buffers GitHub releases page. 
 
-Note: Make sure that you follow the steps to configure the necessary connections in your AWS account to establish connectivity to the NYSE BQT Kafka offering.
+Note: We have 2 environments for this offering viz. Load Test and Prod. Please see respective cloud onboarding documentation below:
 
 | Environment                    | Documentation Link                                                                        |
 |--------------------------------|-------------------------------------------------------------------------------------------|
@@ -49,8 +49,8 @@ To generate the BQT_Cloud_Streaming_pb2.py file from the BQT_Cloud_Streaming.pro
 
     | Bootstrap Servers                                      | Description                    |
     |--------------------------------------------------------|--------------------------------|
-    | `['broker.lt.use1.bqt.pulse.nyse:9094']`               | Load Test us-east-1 endpoint   |
-    | `['broker.prod.use1.bqt.pulse.nyse:9094']`             | Production us-east-1 endpoint  |
+    | `['broker.lt.use1.bqt.pulse.nyse:9094']`               | Load Test endpoint             |
+    | `['broker.prod.use1.bqt.pulse.nyse:9094']`             | Production endpoint            |
 
     **group_id**: Update group_id to pull data from Kafka. group_id should be {name_of_topic_[your_AWS_Account_Nmbr]} Example: bqt_trd_str_1_1234567890  
     **sasl_plain_username**: Kafka username  
