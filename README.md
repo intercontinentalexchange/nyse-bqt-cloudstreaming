@@ -2,7 +2,7 @@
 # NYSE BQTMessage Consumer
 
 This repository has sample code snippets for Java, Node.js and Python to test the NYSE BQT Kafka connectivity. The NYSE Best Quote and Trades (BQT) is a cost efficient, consolidated market data feed that provides a unified view of quotes and trades from NYSE, NYSE American, NYSE Arca, NYSE Chicago and NYSE National. More details [here.](https://www.nyse.com/market-data/real-time/nyse-bqt) 
-This repository has sample code snippets for Java, Node.js and Python to test the NYSE BQT Kafka connectivity. The NYSE Best Quote and Trades (BQT) is a cost efficient, consolidated market data feed that provides a unified view of quotes and trades from NYSE, NYSE American, NYSE Arca, NYSE Chicago and NYSE National. More details [here.](https://www.nyse.com/market-data/real-time/nyse-bqt) 
+ 
 ## Prerequisites
 Make sure that you follow the steps to configure the necessary connections in your AWS account to establish connectivity to the NYSE BQT Kafka offering.
 
