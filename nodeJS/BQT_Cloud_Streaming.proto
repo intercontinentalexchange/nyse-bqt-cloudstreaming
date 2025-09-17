@@ -18,6 +18,10 @@ message BQTMessage {
     SymbolClear symbol_clear = 11;
     ConsolidatedVolume cons_vol = 12;
     StockSummary ssm = 13;
+    DepthDelta depth_delta = 14;
+    DepthDeltaPricePoint price_point = 15;
+    DepthDeltaParticipant price_point_parti = 16;
+    Imbalance imbalance = 17;
   }
 }
 
@@ -130,10 +134,6 @@ message Trade {
   optional string tradecondition3 = 9;
   optional string tradecondition4 = 10;
   optional string marketid = 11;
-  optional uint64 fh_sourcetime=12;
-  optional uint64 fh_sourcetimeNS=13;
-  optional uint64 pps_sourcetime=14;
-  optional uint64 pps_sourcetimeNS=15;
 }
 
 message TradeCorrection {
@@ -181,4 +181,50 @@ message TrfPriorDayTradeCancel {
   optional double price = 5;
   optional uint32 volume = 6;
   optional uint64 priordaytime = 7;
+}
+
+message DepthDeltaParticipant {
+  optional string marketid = 1;
+  optional uint32 numoforders = 2;
+  optional uint32 volume = 3;
+}
+
+message DepthDeltaPricePoint {
+  optional double price = 1;
+  optional string side = 2;
+  optional uint32 numofpartis = 3;
+  repeated DepthDeltaParticipant participant = 4;  
+}
+
+message DepthDelta {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional uint32 totpricepoints = 4;
+  repeated DepthDeltaPricePoint pricepoint = 5;
+}
+
+message Imbalance {
+  optional uint64 feedmsgseq = 1;
+  optional uint64 sourcetime = 2;
+  optional string symbol = 3;
+  optional double refprice = 4;
+  optional uint32 pairedqty = 5;
+  optional uint32 totimbqty = 6;
+  optional uint32 mktimbqty = 7;
+  optional uint32 auctiontime = 8;
+  optional string auctiontype = 9;
+  optional string imbside = 10;
+  optional double continuousbookclearprice = 11;
+  optional double closeonlyclearprice = 12;
+  optional double ssrfillprice = 13;
+  optional double indmatchprice = 14;
+  optional double uppercollar = 15;
+  optional double lowercollar = 16;
+  optional string auctionstatus = 17;
+  optional string freezestatus = 18;
+  optional uint32 numextension = 19;
+  optional uint32 unpairqty = 20;
+  optional string unpairside = 21;
+  optional string marketid = 22; 
 }
